@@ -15,19 +15,24 @@ This shell script scans a directory for Microsoft Access database files (`.mdb` 
 - `mdbtools` package (for `mdb-ver`)
 
 ## Installation
-Install `mdbtools` (Debian/Ubuntu):
+Use your system package manager to install `mdbtools`. Common commands:
 
-```sh
-sudo apt-get install mdbtools
-```
+| Platform / Package manager | Install command |
+|---|---|
+| Debian / Ubuntu | `sudo apt-get install mdbtools` |
+| RHEL / CentOS (EPEL) | `sudo yum install epel-release && sudo yum install mdbtools` |
+| Fedora | `sudo dnf install mdbtools` |
+| Arch Linux | `sudo pacman -S mdbtools` |
+| openSUSE | `sudo zypper install mdbtools` |
+| Alpine | `sudo apk add mdbtools` |
+
+If your distribution doesn't package `mdbtools`, consider building from source ([mdbtools GitHub](https://github.com/mdbtools/mdbtools)) or using a prebuilt binary. 
 
 Make the script executable:
 
 ```sh
 chmod +x mdbcheck.sh
 ```
-
-Note: If you are using Windows with WSL, the executable bit may be set within WSL but will not be visible in Windows Explorer. If you want the executable bit recorded in Git so Unix users receive it on clone, run `git update-index --add --chmod=+x mdbcheck.sh` from a Git-enabled shell (e.g., WSL or Git Bash).
 
 ## Usage
 Run the script, optionally specifying a directory:
@@ -42,9 +47,9 @@ If no directory is specified, the current directory is used.
 ```
 File                                     JET Version Status      
 ---------------------------------------- ---------- ------------
-NorthwindOldDB_1at.mdb                   JET4       OK          
-Employees - Microsoft Access.mdb         JET3       MDBTOOLS    
-SALES.MDB                                Error      Unsupported 
+sample_access97_db.mdb                   JET4       OK          
+sample_access95_db.mdb                   JET3       MDBTOOLS    
+sample2.mdb                              Error      Unsupported 
 ```
 
 ## Status Column
