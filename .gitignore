@@ -1,0 +1,37 @@
+# Standard .gitignore for shell script projects
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore compiled binaries
+*.out
+*.exe
+*.o
+
+# Ignore backup files
+*.bak
+
+# Ignore node modules (if any)
+node_modules/
+
+# Ignore Python cache (if any)
+__pycache__/
+*.pyc
+
+# Ignore .test directory and all its contents
+.test/
+
+# Ignore other common files
+.env
+
+# End of file
