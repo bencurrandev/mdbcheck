@@ -225,7 +225,12 @@ if [[ $RECURSIVE -eq 0 ]]; then
             jetver="Error"
         else
             case "$jetver" in
+                *ACE16*) status="OK" ;;
+                *ACE15*) status="OK" ;;
+                *ACE14*) status="OK" ;;
+                *ACE12*) status="OK" ;;
                 *JET4*) status="OK" ;;
+                *JET3.5*) status="OK" ;;
                 *JET3*) status="MDBTOOLS" ;;
                 *) status="Unsupported" ;;
             esac
@@ -278,7 +283,12 @@ else
             jetver="Error"
         else
             case "$jetver" in
+                *ACE16*) status="OK" ;;
+                *ACE15*) status="OK" ;;
+                *ACE14*) status="OK" ;;
+                *ACE12*) status="OK" ;;
                 *JET4*) status="OK" ;;
+                *JET3.5*) status="OK" ;;
                 *JET3*) status="MDBTOOLS" ;;
                 *) status="Unsupported" ;;
             esac
