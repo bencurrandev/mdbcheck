@@ -30,6 +30,7 @@ __pycache__/
 
 # Ignore .test directory and all its contents
 .test/
+*.csv
 
 # Ignore other common files
 .env

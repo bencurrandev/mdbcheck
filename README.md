@@ -48,9 +48,19 @@ If `DIR` is not specified, the current directory is used. Examples:
 
 ### Options
 - `-r`, `--recursive` — scan subdirectories recursively and group output by directory
+- `-c`, `--csv [file.csv]` — write results to a CSV file (default: `mdbcheck.csv`) and also print the normal table output to the screen. If a filename is provided it must end with `.csv`; if the token after `-c` does not end with `.csv` it is treated as the `DIR` argument.
+- `-C`, `--csvonly [file.csv]` — write results to a CSV file only (no table output); the script will show a progress dot for each file processed. The optional filename rules are the same as `-c`.
 - `-h`, `--help` — show usage information
 
 Default behavior is non-recursive (only top-level files in `DIR`).
+
+## CSV output details
+- CSV header: `Path,File,JETVersion,Status`.
+  - `Path` is the full absolute path to the file (no shortening).
+  - `File` is the basename of the file.
+  - `JETVersion` is the JET engine label (no space in the header).
+  - `Status` is one of `OK`, `MDBTOOLS`, or `Unsupported`.
+- `-c` writes the CSV file and still prints the normal table on-screen. `-C` writes only the CSV file and prints progress dots to indicate progress.
 
 ## How output is grouped
 - In non-recursive mode the script prints the scanned directory as a single header line above the file list.
